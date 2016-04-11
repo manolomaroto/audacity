@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<img src="gato.jpg" id="my-elem"><br/>
+		<span id="puntos">0</span>
+	</div>
+
+	<script type="text/javascript">
+		var clicadas = 0;
+		var elem = document.getElementById('my-elem');
+		elem.addEventListener('click', function(){
+  			clicadas += 1;
+  			document.getElementById("puntos").innerHTML = clicadas;
+
+		}, false);
+	</script>
+</body>
+</html>
