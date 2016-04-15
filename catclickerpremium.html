@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cat clicker premium</title>
+</head>
+<body onload="clickeando('0')">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<ul>
+					<li id="gato1" onclick="clickeando('0')">Gato 1</li>
+					<li id="gato2" onclick="clickeando('1')">Gato 2</li>
+					<li id="gato3" onclick="clickeando('2')">Gato 3</li>
+				</ul>
+			</div>
+			<div class="col-md-8 img-responsive">
+			<h1 id="nombre"></h1>
+					<img src="" id="foto" onclick="clickfoto(this)">
+				<h3 id="clicks"></h3>
+
+			</div>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script type="text/javascript">
+		
+		var gatos = [
+			{nombre:'Minino', marcador:0},
+			{nombre:'Canino', marcador:0},
+			{nombre:'Chinino', marcador:0},
+		];
+		var nombredelgato = document.getElementById("nombre");
+		var vecesdeclick = document.getElementById("clicks");
+		var fotogato = document.getElementById("foto");
+
+		
+
+		var clickeando = function(gatete){
+			
+			nombredelgato.innerHTML = gatos[gatete].nombre;
+			fotogato.src = "gato"+gatete+".jpg";
+			vecesdeclick.innerHTML = gatos[gatete].marcador;
+			fotogato.class = gatete;
+			
+		}
+
+		var clickfoto = function(esto){
+
+			gatos[esto.class].marcador += 1;
+			vecesdeclick.innerHTML = gatos[esto.class].marcador;
+		}
+	
+	</script>
+</body>
+</html>
